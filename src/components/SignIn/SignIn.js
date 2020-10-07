@@ -34,11 +34,10 @@ function SignIn(){
                 <a href="url">Forgot password</a>
                 <br />
                 <Button>Sign in</Button>
-                <br />
-                <div>
-                <Link to="/SignUp">Sign Up</Link>
-                </div>
             </Form>
+            <div>
+                <Link to="/SignUp">Sign Up</Link>
+            </div>
         </Container>
     )
 }
