@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { Button, Container, Form } from 'reactstrap'
 import { Link } from "react-router-dom"
+import "./SignIn.scss"
+import SignInHeader from "../SignInHeader/SignInHeader"
 
 function SignIn(){
     const [email, setEmail] = useState("")
@@ -12,10 +14,12 @@ function SignIn(){
     }
 
     return(
-        <Container className="SignInForm" onSubmit={handleSubmit}>
-            <Form> 
-                <h1>Sign In</h1>
-                <h2>Email</h2>
+        <div>
+        <SignInHeader className="SignInHeader"/>
+        <Container onSubmit={handleSubmit}>
+            <Form className="SignInForm"> 
+                <h1 className="SignInText">Sign In</h1>
+                <h2 className="EmailText">Email</h2>
                 <input 
                     type="email" 
                     name="email" 
@@ -23,7 +27,7 @@ function SignIn(){
                     onChange={e => setEmail(e.target.value)
                 }/>
                 <br />
-                <h2>Password</h2>
+                <h2 className="PasswordText">Password</h2>
                 <input 
                     type="password" 
                     name="password" 
@@ -35,10 +39,11 @@ function SignIn(){
                 <br />
                 <Button>Sign in</Button>
             </Form>
-            <div>
+            <div className="SignUpLink">
                 <Link to="/SignUp">Sign Up</Link>
             </div>
         </Container>
+        </div>
     )
 }
 

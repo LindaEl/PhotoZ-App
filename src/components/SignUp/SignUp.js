@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { Button, Container, Form } from 'reactstrap'
 import { Link } from "react-router-dom"
+import "./SignUp.scss"
+import SignInHeader from "../SignInHeader/SignInHeader"
 
 function SignUp(){
     const [email, setEmail] = useState("")
@@ -13,10 +15,12 @@ function SignUp(){
     }
 
     return(
-        <Container className="SignInForm" onSubmit={handleSubmit}>
-            <Form> 
+        <div>
+        <SignInHeader />
+        <Container onSubmit={handleSubmit}>
+            <Form className="SignUpForm"> 
                 <h1>Sign Up</h1>
-                <h2>Username</h2>
+                <h2 className="UsernameText">Username</h2>
                 <input 
                     type="text" 
                     name="username" 
@@ -24,7 +28,7 @@ function SignUp(){
                     onChange={e => setUsername(e.target.value)
                 }/>
                 <br />
-                <h2>Email</h2>
+                <h2 className="EmailText">Email</h2>
                 <input 
                     type="email" 
                     name="email" 
@@ -32,7 +36,7 @@ function SignUp(){
                     onChange={e => setEmail(e.target.value)
                 }/>
                 <br />
-                <h2>Password</h2>
+                <h2 className="PasswordText">Password</h2>
                 <input 
                     type="password" 
                     name="password" 
@@ -40,16 +44,13 @@ function SignUp(){
                     onChange={e => setPassword(e.target.value)
                 }/>
                 <br />
-                <a href="url">Forgot password</a>
-                <br />
-                {/*<input type="submit" value="Submit" />*/}
                 <Button>Sign up</Button>
             </Form>
-            <br />
-            <div>
-                <Link to="/SignIn">Sign In</Link>
+            <div className="SignInLink">
+                <Link to="/SignIn" >Sign In</Link>
             </div>
         </Container>
+        </div>
     )
 }
 
