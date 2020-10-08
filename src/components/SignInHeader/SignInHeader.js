@@ -1,5 +1,5 @@
 import React from "react"
-import logo from "./AppIcon.svg"
+import logo from "../../images/AppIcon.svg"
 import "./SignInHeader.scss"
 
 function SignInHeader(){

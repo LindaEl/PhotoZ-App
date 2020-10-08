@@ -13,9 +13,13 @@ function SignIn(){
         alert(`Email set to ${email} and password set to ${password}`)
     }
 
+    const handleClick = () => {
+        window.open("/Main", "_self")
+    }
+
     return(
         <div>
-        <SignInHeader className="SignInHeader"/>
+        <SignInHeader />
         <Container onSubmit={handleSubmit}>
             <Form className="SignInForm"> 
                 <h1 className="SignInText">Sign In</h1>
@@ -37,7 +41,7 @@ function SignIn(){
                 <br />
                 <a href="url">Forgot password</a>
                 <br />
-                <Button>Sign in</Button>
+                <Button onClick={handleClick}>Sign in</Button>
             </Form>
             <div className="SignUpLink">
                 <Link to="/SignUp">Sign Up</Link>
